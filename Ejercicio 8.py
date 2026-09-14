@@ -1,23 +1,4 @@
-"""
-Clasificación de triángulos.
-
-El programa lee las longitudes de los tres lados de un triángulo y:
-
-  1) Verifica que las longitudes sean válidas (mayores que 0).
-  2) Verifica que con esas tres longitudes se pueda formar un
-     triángulo real, usando la desigualdad triangular (la suma de
-     dos lados cualquiera debe ser mayor que el tercero).
-  3) Si es un triángulo válido, lo clasifica:
-       a) Por sus lados: equilátero, isósceles o escaleno.
-       b) Por sus ángulos: rectángulo, acutángulo u obtusángulo,
-          comparando el cuadrado del lado mayor con la suma de los
-          cuadrados de los otros dos (relación basada en el Teorema
-          de Pitágoras).
-
-El proceso se repite pidiendo un nuevo triángulo, hasta que el
-usuario ingresa 0 como PRIMERA longitud (valor centinela para salir).
-"""
-
+#Ejercicio 8: Clasificación de triángulos
 
 def pedir_lado(mensaje, permitir_centinela=False):
     """
@@ -73,9 +54,7 @@ def clasificar_por_lados(a, b, c):
 def clasificar_por_angulos(a, b, c):
     """
     Clasifica el triángulo según sus ángulos, comparando el cuadrado
-    del lado mayor con la suma de los cuadrados de los otros dos
-    (generalización del Teorema de Pitágoras):
-
+    del lado mayor con la suma de los cuadrados de los otros dos:
       - Si lado_mayor^2 == suma de los otros dos al cuadrado:
             el ángulo opuesto al lado mayor mide 90°  -> Rectángulo
       - Si lado_mayor^2 <  suma de los otros dos al cuadrado:
@@ -83,9 +62,6 @@ def clasificar_por_angulos(a, b, c):
             también) -> Acutángulo
       - Si lado_mayor^2 >  suma de los otros dos al cuadrado:
             ese ángulo es mayor a 90°  -> Obtusángulo
-
-    Se ordenan los lados de menor a mayor para identificar con
-    facilidad cuál es el lado mayor.
     """
     lados = sorted([a, b, c])
     menor1, menor2, mayor = lados[0], lados[1], lados[2]
@@ -104,8 +80,7 @@ def clasificar_por_angulos(a, b, c):
 def main():
     """
     Función principal: repite el proceso de leer un triángulo,
-    validarlo y clasificarlo, hasta que el usuario ingresa 0 como
-    primera longitud (valor centinela).
+    validarlo y clasificarlo.
     """
     print("--- Clasificación de triángulos ---")
     print("(Ingrese 0 como primera longitud para salir)\n")

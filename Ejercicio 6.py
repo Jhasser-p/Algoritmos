@@ -1,21 +1,9 @@
-"""
-Cálculo de la desviación estándar (poblacional) de un conjunto de
-números ingresados por el usuario.
-
-Este programa muestra DOS formas de calcularla:
-
-  1) calcular_con_lista(): guardando todos los valores en una lista.
-  2) calcular_sin_lista(): sin guardar los valores, acumulando solo
-     algunos totales a medida que se van leyendo.
-
-Se calcula la desviación estándar POBLACIONAL (se divide entre n).
-Ver el análisis de a) y b) al final del archivo, en los comentarios.
-"""
+#Ejercicio 6: Desviación estándar poblacional con y sin listas
 
 
 def pedir_entero_positivo(mensaje):
     """
-    Pide un número entero positivo, validando la entrada.
+    Pide un número entero positivo, valida la entrada.
     """
     while True:
         try:
@@ -30,7 +18,7 @@ def pedir_entero_positivo(mensaje):
 
 def pedir_flotante(mensaje):
     """
-    Pide un número decimal, validando la entrada.
+    Pide un número decimal y valida la entrada.
     """
     while True:
         try:
@@ -48,10 +36,6 @@ def calcular_con_lista(n):
     - Se recorre la lista una segunda vez para sumar (x_i - media)^2.
     - La desviación estándar poblacional es la raíz cuadrada de esa
       suma dividida entre n.
-
-    Esta versión es directa porque, al tener todos los valores
-    guardados, se puede recorrer la lista tantas veces como se
-    necesite (una vez para la media, otra para las diferencias).
     """
     datos = []
     for i in range(n):
@@ -88,11 +72,6 @@ def calcular_sin_lista(n):
     solo necesita UNA pasada sobre los datos:
 
         varianza = (suma de x_i^2)/n - media^2
-
-    Esta fórmula se obtiene expandiendo (x_i - media)^2 y usando que
-    la suma de (x_i - media) es 0. Así, basta con ir acumulando, a
-    medida que se leen los datos, dos totales: la suma de los valores
-    y la suma de los valores al cuadrado. No hace falta guardarlos.
     """
     suma = 0
     suma_cuadrados = 0
@@ -110,7 +89,7 @@ def calcular_sin_lista(n):
 def main():
     """
     Función principal: pide la cantidad de datos, permite elegir
-    qué versión usar y muestra el resultado.
+    qué versión usar.
     """
     print("Cálculo de la desviación estándar")
     print("1. Calcular usando una lista")
@@ -142,17 +121,13 @@ if __name__ == "__main__":
 # cuadrado entre n (la cantidad total de datos).
 #
 # La desviación estándar MUESTRAL se usa cuando los datos son solo
-# una MUESTRA tomada de una población más grande (no todos los
-# datos posibles). En ese caso, la varianza se divide entre (n - 1)
+# una MUESTRA tomada de una población más grande. 
+# En ese caso, la varianza se divide entre (n - 1)
 # en lugar de n. Esto se conoce como "corrección de Bessel" y hace
 # que el resultado sea un poco más grande que el poblacional. Se usa
 # porque, al no tener todos los datos de la población, dividir entre
 # n tiende a subestimar la variabilidad real; dividir entre (n - 1)
 # corrige ese sesgo.
-#
-# Para obtener la versión muestral en este programa, bastaría con
-# cambiar la línea "varianza = suma_diferencias_cuadrado / n" (o su
-# equivalente en la versión sin lista) por "... / (n - 1)".
 #
 # ---------------------------------------------------------------------
 # b) Dificultad adicional en la versión sin listas y cómo se resuelve

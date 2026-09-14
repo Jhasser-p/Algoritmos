@@ -1,26 +1,8 @@
-"""
-Números primos menores o iguales que n.
-
-El programa lee un entero positivo n y muestra todos los números
-primos menores o iguales que n, determinando la primalidad "por
-tanteo" (probando divisores uno por uno), sin usar ninguna
-biblioteca externa (ni siquiera math). Solo se usan estructuras de
-decisión (if) y de repetición (while/for).
-
-Al terminar, se informa cuántos primos se encontraron y cuál es el
-mayor de ellos.
-
-Optimización aplicada: al buscar divisores de un número k, la
-búsqueda se detiene cuando el divisor supera la raíz cuadrada de k
-(sin calcular la raíz con ninguna función; ver justificación en
-es_primo()).
-"""
-
+#Ejercicio 10: Números primos hasta n
 
 def pedir_entero_positivo(mensaje):
     """
-    Pide un número entero positivo, validando la entrada.
-    Repite la pregunta hasta recibir un valor válido.
+    Pide un número entero positivo.
     """
     while True:
         try:
