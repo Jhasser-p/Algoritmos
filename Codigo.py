@@ -1,15 +1,3 @@
-"""
-ordenamiento.py
-taller metodos
-Joan rivero
-Laura Almeida
-Jhasser Piña
-Samuel Cala
-Nicolas Gonzalez
-
-Uso:
-    python ordenamiento.py            # corrida completa (puede tardar varios minutos)
-"""
 import sys
 import json
 import random
